@@ -1,19 +1,51 @@
 <!DOCTYPE html>
 <html>
+  <!-- Start: Head -->
   <head>
+    <!-- Titles -->
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>Y2 Scanner</title>
+    <!-- Styles -->
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
   </head>
+  <!-- End: Head -->
+  <!-- Start: Body -->
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <!-- Start: Container -->
+    <div class="app-container">
+      <!-- Main Log Area-->
+      <div id="debug-data" class="debug-data">
+        Welcome to Y2-Scanner!
+      </div>
+      <!-- Dashboard Buttons -->
+      <div class="bottom-buttons">
+        <button id="start-scraping">Start Scraping</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="export-to-csv" disabled>Export Scanned Ads To CSV</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="btn-close-app">Exit</button>
+      </div>
+      <!-- Footer With Some Details -->
+      <div class="bottom-data">
+        Node.js <span id="node-version"></span>
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+        Chromium <span id="chrome-version"></span>
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+        Electron <span id="electron-version"></span>
+      </div>
+    </div>
+    <!-- End: Container -->
+    <!-- Start: Webview -->
+    <div class="webview-container">
+      <webview 
+        id="y2window"
+        useragent="Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/19G82 [FBAN/FBIOS;FBDV/iPhone10,6;FBMD/iPhone;FBSN/iOS;FBSV/15.6.1;FBSS/3;FBID/phone;FBLC/en_GB;FBOP/5]"
+        disablewebsecurity
+        src="about:blank"
+        preload="./webview-preload.js">
+      </webview>
+    </div>
+    <!-- End: Webview -->
   </body>
+  <!-- End: Body -->
 </html>

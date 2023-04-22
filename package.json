@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "y2-scanner",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -7,16 +7,10 @@
     "start": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Moshe Binnun",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^24.1.2"
+    "electron": "^24.1.2",
+    "electron-packager": "^17.1.1"
   }
 }
